@@ -1,0 +1,507 @@
+
+:root {
+  --navy: #0f2a44;      
+  --accent: #d4a73c;      
+  --text: #2b3440;        
+  --text-light: #5f6b7a;  
+  --bg: #ffffff;         
+  --bg-alt: #f3f6fa;      
+  --border: #e1e6ee;      
+
+  --font: "Inter", Arial, sans-serif;
+  --max-width: 1100px;    /* largeur max du contenu */
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* défilement doux vers les sections */
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Conteneur centré, utilisé dans chaque section */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Titres de section */
+h2 {
+  font-size: 1.9rem;
+  color: var(--navy);
+  margin-bottom: 30px;
+}
+
+/* Petit trait doré sous les titres de section */
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 10px;
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--navy);
+}
+
+.btn-primary:hover {
+  background: #e3b84d;
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  color: var(--navy);
+}
+
+
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(15, 42, 68, 0.88), rgba(15, 42, 68, 0.80)),
+    url("assets/images/hero.jpg") center / cover no-repeat;
+}
+
+
+
+.header {
+  position: static;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* Bouton menu : caché sur ordinateur */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+
+.hero-content {
+  flex: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Photo ronde (ou rond avec initiales en attendant la photo) */
+.photo {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;          /* rogne la photo proprement */
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-hello {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+}
+
+.hero-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 6px 0 16px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  max-width: 560px;
+}
+
+/* Petites infos (lieu, rythme, permis) */
+.hero-infos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+
+.hero-infos li {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+}
+
+/*.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+} */
+
+
+/*
+   SECTIONS
+ */
+.section {
+  padding: 80px 0;
+  background: var(--bg);
+}
+
+/* Une section sur deux en gris clair */
+.section-alt {
+  background: var(--bg-alt);
+}
+
+/* À propos */
+.about-text {
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.step h3 {
+  color: var(--navy);
+  margin: 6px 0 8px;
+}
+
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.card-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.card h3 {
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-top: 4px;
+}
+
+.card-company {
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.card ul {
+  padding-left: 18px;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.card-link:hover {
+  color: var(--accent);
+}
+
+
+
+.skills-title {
+  color: var(--navy);
+  margin: 30px 0 14px;
+}
+
+.skills-title:first-of-type {
+  margin-top: 0;
+}
+
+/* Étiquettes (compétences finance) */
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags li {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Logos (outils et tech) */
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo-item {
+  width: 120px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.logo-item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.logo-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.about-text p { margin-bottom: 1rem; line-height: 1.7; }
+.about-highlights { list-style: none; padding: 0; margin-top: 1.5rem; }
+.about-highlights li { margin-bottom: .5rem; }
+
+
+
+.footer {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 70px 0 30px;
+}
+
+.footer h2 {
+  color: #ffffff;
+}
+
+.footer-intro {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact-list a {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+}
+
+.contact-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.copyright {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+
+/*
+   RESPONSIVE */
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-desc {
+    margin: 0 auto;
+  }
+
+  .hero-infos,
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE : mobile (moins de 700px)
+   ========================================================= */
+@media (max-width: 700px) {
+  /* Le bouton ☰ apparaît */
+  .menu-btn {
+    display: block;
+  }
+
+  /* Le menu devient vertical et caché par défaut */
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 16px;
+  }
+
+  .nav a {
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Classe ajoutée par script.js quand on clique sur ☰ */
+  .nav.open {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-item {
+    width: calc(50% - 8px); /* 2 logos par ligne */
+  }
+}
